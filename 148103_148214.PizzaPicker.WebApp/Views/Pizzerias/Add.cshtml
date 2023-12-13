@@ -1,0 +1,23 @@
+﻿@model _148103_148214.PizzaPicker.WebApp.Models.PizzeriaModel
+
+@{
+}
+<form method="post" action="Add">
+    @* <div class="mb-3">
+        <label for="" class="form-label">Id</label>
+        <input type="number" class="form-control" asp-for="Id"/>
+    </div> *@
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Name"/>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Address</label>
+        <input type="text" class="form-control" asp-for="Address"/>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Supported Postal Codes</label>
+        <input type="text" class="form-control" asp-for="SupportedPostalCodes" />
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj</button>
+</form>

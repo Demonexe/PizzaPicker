@@ -1,0 +1,31 @@
+﻿@using _148103_148214.PizzaPicker.CORE;
+@model _148103_148214.PizzaPicker.WebApp.Models.PizzaModel
+@{
+}
+
+<form method="post" action="View">
+    <div class="mb-3">
+        <label for="" class="form-label">Id</label>
+        <input type="number" class="form-control" asp-for="Id" readonly="@(true)" />
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Name" />
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Ingridients</label>
+        <input type="text" class="form-control" asp-for="Ingridients" />
+    </div>
+    <div class="mb-3">
+        <label for="doughType" class="form-label">Dough type</label>
+        @Html.DropDownListFor(model => model.Dough,
+        new SelectList(Enum.GetValues(typeof(DoughType))),
+        "Select Dough type",
+        new { @class = "form-control", id = "doughType" })
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Pizzeria Id</label>
+        <input type="" class="form-control" asp-for="PizzeriaId" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

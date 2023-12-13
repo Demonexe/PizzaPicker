@@ -1,0 +1,79 @@
+﻿@using _148103_148214.PizzaPicker.CORE;
+@model _148103_148214.PizzaPicker.WebApp.Models.PizzaFilterModel
+
+@using (Html.BeginForm("ViewCombinedFilter", "Pizzas", FormMethod.Post))
+{
+    <div class="filter-section">
+        <h3>Filter Pizzas</h3>
+        <div>
+            <label>Id</label>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>From</label>
+            </div>
+            <div class="col-md-4">
+                <input type="number" class="form-control" asp-for="LowerIdBound" />
+            </div>
+            <div class="col-md-2">
+                <label>To</label>
+            </div>
+            <div class="col-md-4">
+                <input type="number" class="form-control" asp-for="UpperIdBound" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" asp-for="Name" />
+        </div>
+
+        <div class="form-group">
+            <label for="Address">Ingridients</label>
+            <input type="text" class="form-control" asp-for="Ingridients" />
+        </div>
+
+        <div class="form-group">
+            <label for="addressFilter">Dough</label>
+            @Html.DropDownListFor(model => model.Dough,
+        new SelectList(Enum.GetValues(typeof(DoughType))),
+        "Select Dough type",
+        new { @class = "form-control", id = "doughType" })
+        </div>
+
+        <div>
+            <label>PizzeriaId</label>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>From</label>
+            </div>
+            <div class="col-md-4">
+                <input type="number" class="form-control" asp-for="LowerPizzeriaIdBound" />
+            </div>
+            <div class="col-md-2">
+                <label>To</label>
+            </div>
+            <div class="col-md-4">
+                <input type="number" class="form-control" asp-for="UpperPizzeriaIdBound" />
+            </div>
+        </div>
+        <input type="submit" id="applyFiltersBtn" value="Apply Filters" class="btn btn-primary" />
+        <button type="button" onclick="clearAndSubmit()" class="btn btn-secondary">Clear filters</button>
+    </div>
+
+    <script type="text/javascript">
+        function clearAndSubmit() {
+
+            document.getElementById('LowerIdBound').value = '';
+            document.getElementById('UpperIdBound').value = '';
+            document.getElementById('Name').value = '';
+            document.getElementById('Ingridients').value = '';
+            document.getElementById('doughType').value = '';
+            document.getElementById('LowerPizzeriaIdBound').value = '';
+            document.getElementById('UpperPizzeriaIdBound').value = '';
+
+            document.getElementById('applyFiltersBtn').click();
+        }
+    </script>
+}

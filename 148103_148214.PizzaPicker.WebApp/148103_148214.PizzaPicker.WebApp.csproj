@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>_148103_148214.PizzaPicker.WebApp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\148103_148214.PizzaPicker.BLC\148103_148214.PizzaPicker.BLC.csproj" />
+    <ProjectReference Include="..\148103_148214.PizzaPicker.CORE\148103_148214.PizzaPicker.CORE.csproj" />
+    <ProjectReference Include="..\148103_148214.PizzaPicker.DAO\148103_148214.PizzaPicker.DAO.csproj" />
+    <ProjectReference Include="..\148103_148214.PizzaPicker.INTERFACES\148103_148214.PizzaPicker.INTERFACES.csproj" />
+  </ItemGroup>
+
+</Project>

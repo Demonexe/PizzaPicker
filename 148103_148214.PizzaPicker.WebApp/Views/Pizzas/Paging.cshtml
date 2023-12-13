@@ -1,0 +1,93 @@
+﻿@model _148103_148214.PizzaPicker.WebApp.Models.PagingModel
+
+@using (Html.BeginForm("ViewCombinedPaging", "Pizzas", FormMethod.Post, new { id = "pagingForm" }))
+{
+    <input type="hidden" id="CurrentPage" name="CurrentPage" value="@Model.CurrentPage" />
+    <input type="hidden" id="RecordCount" name="RecordCount" value="@Model.RecordCount" />
+    <input type="hidden" id="PageSize" name="PageSize" value="@Model.PageSize" />
+
+
+    <div>
+        <ul class="pagination">
+            <li class="page-item @(!Model.ShowFirst ? "disabled" : "")">
+                <button type="button" onclick="setPage(1)" class="page-link">First<i class="fas fa-fast-backward"></i></button>
+            </li>
+
+            <li class="page-item @(!Model.ShowPrevious ? "disabled" : "")">
+                <button type="button" onclick="setPage(@Model.CurrentPage - 1)" class="page-link">Previous<i class="fas fa-step-backward"></i></button>
+            </li>
+
+            <li class="page-item flex-grow-1"></li>
+            <li class="d-flex align-items-center">Select Page Size: </li>
+
+            <li class="page-item">
+                <select class="form-control" id="pageSize" onchange="changePageSize()">
+                    @if (Model.PageSize == 5)
+                    {
+                        <option value="5" selected>5</option>
+                    }
+                    else
+                    {
+                        <option value="5">5</option>
+                    }
+                    @if (Model.PageSize == 10)
+                    {
+                        <option value="10" selected>10</option>
+                    }
+                    else
+                    {
+                        <option value="10">10</option>
+                    }
+                    @if (Model.PageSize == 15)
+                    {
+                        <option value="15" selected>15</option>
+                    }
+                    else
+                    {
+                        <option value="15">15</option>
+                    }
+                    @if (Model.PageSize == 20)
+                    {
+                        <option value="20" selected>20</option>
+                    }
+                    else
+                    {
+                        <option value="20">20</option>
+                    }
+                    @if (Model.PageSize == 25)
+                    {
+                        <option value="25" selected>25</option>
+                    }
+                    else
+                    {
+                        <option value="25">25</option>
+                    }
+                </select>
+            </li>
+
+            <li class="page-item flex-grow-1"></li>
+
+            <li class="page-item @(!Model.ShowNext ? "disabled" : "")">
+                <button type="button" onclick="setPage(@Model.CurrentPage + 1)" class="page-link">Next<i class="fas fa-step-forward"></i></button>
+            </li>
+
+            <li class="page-item @(!Model.ShowLast ? "disabled" : "")">
+                <button type="button" onclick="setPage(@Model.TotalPages)" class="page-link">Last<i class="fas fa-fast-forward"></i></button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function setPage(page) {
+            document.getElementById('CurrentPage').value = page;
+            document.getElementById('pagingForm').submit();
+        }
+
+        function changePageSize() {
+            document.getElementById('CurrentPage').value = 1;
+            document.getElementById('PageSize').value =
+                document.getElementById('pageSize').value;
+            document.getElementById('pagingForm').submit();
+        }
+    </script>
+}

@@ -1,0 +1,24 @@
+﻿@model List<_148103_148214.PizzaPicker.INTERFACES.DaoInterfaces.IPizzeria>
+
+<h1>Pizzerias</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>SupportedPostalCodes</th>
+        </tr>
+    </thead>
+    @foreach (var pizzeria in Model)
+    {
+        <tr>
+            <td>@pizzeria.Id</td>
+            <td>@pizzeria.Name</td>
+            <td>@pizzeria.Address</td>
+            <td>@pizzeria.SupportedPostalCodes</td>
+            <td><a href="Edit/@pizzeria.Id">Edit</a></td>
+            <td><a href="Delete/@pizzeria.Id">Delete</a></td>
+        </tr>
+    }
+</table>

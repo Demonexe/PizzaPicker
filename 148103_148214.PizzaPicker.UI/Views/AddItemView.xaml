@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="_148103_148214.PizzaPicker.Views.AddItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:_148103_148214.PizzaPicker.Views">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Column="0" x:Name="ChosenSlot" Margin="5" AutoGenerateColumns="True" HorizontalAlignment="Stretch" CanUserAddRows="False" ColumnWidth="*" CanUserResizeColumns="True"/>
+
+        <Grid Grid.Column="1" HorizontalAlignment="Right">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Content="Dodaj" Margin="2" x:Name="AddRow"/>
+            <Button Grid.Row="1" Content="Zapisz" Margin="2" x:Name="SaveRow"/>
+        </Grid>
+    </Grid>
+</UserControl>

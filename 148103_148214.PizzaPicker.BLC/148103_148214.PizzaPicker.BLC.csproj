@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>_148103_148214.PizzaPicker.BLC</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="7.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\148103_148214.PizzaPicker.CORE\148103_148214.PizzaPicker.CORE.csproj" />
+    <ProjectReference Include="..\148103_148214.PizzaPicker.INTERFACES\148103_148214.PizzaPicker.INTERFACES.csproj" />
+  </ItemGroup>
+
+</Project>

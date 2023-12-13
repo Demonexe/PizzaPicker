@@ -1,0 +1,13 @@
+﻿@model _148103_148214.PizzaPicker.WebApp.Models.PizzaComplexModel
+
+<div class="row">
+    <div class="col-md-3">
+        @Html.Partial("Filters", Model.Filter)
+    </div>
+    <div class="col-md-9">
+        @Html.Partial("ViewPizzas", Model.Pizzas)
+        <div class="mt-3">
+            @Html.Partial("Paging", Model.Paging)
+        </div>
+    </div>
+</div>
